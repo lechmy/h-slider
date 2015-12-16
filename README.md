@@ -3,3 +3,5 @@
 1. jQuery
 2. jQuery Mobile
 3. Font Awesome
+
+More info coming soon...
