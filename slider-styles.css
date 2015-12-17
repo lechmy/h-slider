@@ -40,16 +40,18 @@
     position: absolute;
     left: 0px;
     right: 0px;
-    width: 600px;
+    width: 1px;
     height: 100%;
     margin: auto;
     z-index: 0;
     cursor: pointer;
 }
 .slider-items{
+    box-sizing: content-box !important;
     float: left;
-    width: 100px;
+    width: auto;
     height: 100%;
+    padding: 0px 10px;
     color: inherit;
     text-align: center;
 }
