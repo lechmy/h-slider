@@ -1,7 +1,10 @@
 var sliderRightEnd;
 $(document).ready(function(){
+    $('.slider-items').each(function(){
+        $('.slider').width($('.slider').width()+$(this).outerWidth(true));
+    });
     sliderRightEnd = $("#slider-holder").width() - $("#slider").width();
-    var attach = true; //nisu zakaceni event-i
+    var attach = true;
     if(sliderRightEnd < 0 && attach){
             slide();
             attach=false;
@@ -27,12 +30,12 @@ $(document).ready(function(){
 function slide(){
     var canSlide = true;
     var startX;
-    $("#slider-holder").on('vmousedown',function(e){ //touchstart
+    $("#slider-holder").on('vmousedown',function(e){
         startX = e.clientX - parseInt($("#slider").css("left"));
-        $("#slider-holder").on('vmousemove',function(e){ //touchmove
+        $("#slider-holder").on('vmousemove',function(e){
             $("#slider").css("left", (e.clientX - startX));
         });
-        $("#slider-holder").on('vmouseup',function(e){ //touchend
+        $("#slider-holder").on('vmouseup',function(e){
             $(this).off('vmousemove');
             if(parseInt($("#slider").css("left")) > 1){
                 $("#slider").animate({left: '0'},300);
