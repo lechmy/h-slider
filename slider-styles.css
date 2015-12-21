@@ -2,6 +2,7 @@
     position: fixed;
     display: none;
     justify-content: center;
+    -webkit-justify-content: center;
     bottom: 0px;
     left: 0px;
     height: 70px;
@@ -19,14 +20,22 @@
     position: relative;
     height: 100%;
     flex: 2;
-/*    width: 100px;*/
-    overflow: hidden;
+    -webkit-flex: 2;
+    overflow-y: hidden;
+    overflow-x: scroll;
     cursor: pointer;
+}
+.slider-holder::-webkit-scrollbar
+{
+    display: none;
 }
 .slider-btn{
     display: flex;
+    display: -webkit-flex;
     justify-content: center;
+    -webkit-justify-content: center;
     align-items: center;
+    -webkit-align-items: center;
     height: 100%;
     width: 10%;
     max-width: 60px;
@@ -62,5 +71,6 @@
 @media (max-width: 992px){
    .slider-wrapper{
         display: flex;
+        display: -webkit-flex;
     }
 }
